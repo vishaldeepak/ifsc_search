@@ -102,4 +102,196 @@ defmodule IndiaInfo.Locations do
     State.changeset(state, %{})
   end
 
+
+  alias IndiaInfo.Locations.District
+
+  @doc """
+  Returns the list of districts.
+
+  ## Examples
+
+      iex> list_districts()
+      [%District{}, ...]
+
+  """
+  def list_districts do
+    Repo.all(District)
+  end
+
+  @doc """
+  Gets a single district.
+
+  Raises `Ecto.NoResultsError` if the District does not exist.
+
+  ## Examples
+
+      iex> get_district!(123)
+      %District{}
+
+      iex> get_district!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_district!(id), do: Repo.get!(District, id)
+
+  @doc """
+  Creates a district.
+
+  ## Examples
+
+      iex> create_district(%{field: value})
+      {:ok, %District{}}
+
+      iex> create_district(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_district(attrs \\ %{}) do
+    %District{}
+    |> District.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a district.
+
+  ## Examples
+
+      iex> update_district(district, %{field: new_value})
+      {:ok, %District{}}
+
+      iex> update_district(district, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_district(%District{} = district, attrs) do
+    district
+    |> District.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a District.
+
+  ## Examples
+
+      iex> delete_district(district)
+      {:ok, %District{}}
+
+      iex> delete_district(district)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_district(%District{} = district) do
+    Repo.delete(district)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking district changes.
+
+  ## Examples
+
+      iex> change_district(district)
+      %Ecto.Changeset{source: %District{}}
+
+  """
+  def change_district(%District{} = district) do
+    District.changeset(district, %{})
+  end
+
+  alias IndiaInfo.Locations.City
+
+  @doc """
+  Returns the list of cities.
+
+  ## Examples
+
+      iex> list_cities()
+      [%City{}, ...]
+
+  """
+  def list_cities do
+    Repo.all(City)
+  end
+
+  @doc """
+  Gets a single city.
+
+  Raises `Ecto.NoResultsError` if the City does not exist.
+
+  ## Examples
+
+      iex> get_city!(123)
+      %City{}
+
+      iex> get_city!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_city!(id), do: Repo.get!(City, id)
+
+  @doc """
+  Creates a city.
+
+  ## Examples
+
+      iex> create_city(%{field: value})
+      {:ok, %City{}}
+
+      iex> create_city(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_city(attrs \\ %{}) do
+    %City{}
+    |> City.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a city.
+
+  ## Examples
+
+      iex> update_city(city, %{field: new_value})
+      {:ok, %City{}}
+
+      iex> update_city(city, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_city(%City{} = city, attrs) do
+    city
+    |> City.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a City.
+
+  ## Examples
+
+      iex> delete_city(city)
+      {:ok, %City{}}
+
+      iex> delete_city(city)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_city(%City{} = city) do
+    Repo.delete(city)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking city changes.
+
+  ## Examples
+
+      iex> change_city(city)
+      %Ecto.Changeset{source: %City{}}
+
+  """
+  def change_city(%City{} = city) do
+    City.changeset(city, %{})
+  end
 end
