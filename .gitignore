@@ -4,6 +4,9 @@
 /deps
 /*.ez
 
+# This contain fies that you would require once to load into database
+/build_data
+
 #Ignore Mac hidden files
 .DS_Store
 
