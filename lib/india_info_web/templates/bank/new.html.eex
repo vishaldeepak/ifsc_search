@@ -1,0 +1,5 @@
+<h2>New Bank</h2>
+
+<%= render "form.html", Map.put(assigns, :action, bank_path(@conn, :create)) %>
+
+<span><%= link "Back", to: bank_path(@conn, :index) %></span>

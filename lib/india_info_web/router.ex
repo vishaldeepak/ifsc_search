@@ -17,9 +17,11 @@ defmodule IndiaInfoWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/banks", BankController
     resources "/states", StateController
+    
   end
-
+  
   # Other scopes may use custom stacks.
   # scope "/api", IndiaInfoWeb do
   #   pipe_through :api
