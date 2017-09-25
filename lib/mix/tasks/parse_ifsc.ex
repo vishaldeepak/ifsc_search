@@ -1,4 +1,10 @@
 defmodule Mix.Tasks.ParseIfsc do
+@moduledoc """
+Given data in xlsx sheets from IFSC.
+Need to run the Task Twice due to race conditions on unqiue constriants
+
+mix parse_ifsc
+"""  
   use Mix.Task
   require IEx
   require Logger
