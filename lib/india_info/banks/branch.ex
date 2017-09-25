@@ -7,7 +7,7 @@ defmodule IndiaInfo.Banks.Branch do
 
   schema "branches" do
     field :address, :string
-    field :contact, :string
+    field :contact_no, :string
     field :ifsc, :string
     field :name, :string
     
@@ -20,8 +20,8 @@ defmodule IndiaInfo.Banks.Branch do
   @doc false
   def changeset(%Branch{} = branch, attrs) do
     branch
-    |> cast(attrs, [:name, :address, :ifsc, :contact])
-    |> validate_required([:name, :address, :ifsc, :contact])
+    |> cast(attrs, [:name, :address, :ifsc, :contact_no, :bank_id, :city_id])
+    |> validate_required([:name, :address, :ifsc, :contact_no, :bank_id, :city_id])
     |> unique_constraint(:ifsc)
   end
 end

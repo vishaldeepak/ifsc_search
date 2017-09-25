@@ -38,6 +38,17 @@ defmodule IndiaInfo.Locations do
   def get_state!(id), do: Repo.get!(State, id)
 
   @doc """
+  Looks for a state given the name. If found return the state struct else
+  returns nil
+  """
+  def find_or_create_state_by_name(name) do
+    case Repo.get_by(State, name: name) do
+      nil -> create_state(%{name: name})
+      state -> {:ok, state}
+    end
+  end
+
+  @doc """
   Creates a state.
 
   ## Examples
@@ -135,6 +146,16 @@ defmodule IndiaInfo.Locations do
   def get_district!(id), do: Repo.get!(District, id)
 
   @doc """
+  Returns District given the name and state_id. Creates if not found
+  """
+  def find_or_create_district_by_name(name, state_id) do
+    case Repo.get_by(District, [name: name, state_id: state_id]) do
+      nil -> create_district(%{name: name, state_id: state_id})
+      district -> {:ok, district}
+    end
+  end
+
+  @doc """
   Creates a district.
 
   ## Examples
@@ -229,6 +250,16 @@ defmodule IndiaInfo.Locations do
 
   """
   def get_city!(id), do: Repo.get!(City, id)
+
+  @doc """
+  Returns City given the name and distric_id. Creates if not found
+  """
+  def find_or_create_city_by_name(name, district_id) do
+    case Repo.get_by(City, [name: name, district_id: district_id]) do
+      nil -> create_city(%{name: name, district_id: district_id})
+      city -> {:ok, city}
+    end
+  end  
 
   @doc """
   Creates a city.

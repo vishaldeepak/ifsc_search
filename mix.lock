@@ -12,6 +12,7 @@
   "file_system": {:hex, :file_system, "0.2.1", "c4bec8f187d2aabace4beb890f0d4e468f65ca051593db768e533a274d0df587", [], [], "hexpm"},
   "gettext": {:hex, :gettext, "0.13.1", "5e0daf4e7636d771c4c71ad5f3f53ba09a9ae5c250e1ab9c42ba9edccc476263", [], [], "hexpm"},
   "iconv": {:hex, :iconv, "1.0.5", "ae871aa11c854695db37e48fd5e5583b02e106126fbdf21bb53448f5a47c092b", [], [{:p1_utils, "1.0.9", [hex: :p1_utils, repo: "hexpm", optional: false]}], "hexpm"},
+  "logger_file_backend": {:hex, :logger_file_backend, "0.0.10", "876f9f84ae110781207c54321ffbb62bebe02946fe3c13f0d7c5f5d8ad4fa910", [], [], "hexpm"},
   "mime": {:hex, :mime, "1.1.0", "01c1d6f4083d8aa5c7b8c246ade95139620ef8effb009edde934e0ec3b28090a", [], [], "hexpm"},
   "p1_utils": {:hex, :p1_utils, "1.0.9", "c33c230efbeb4dcc02911161e3cb1a93231a92df15e3fc97de655a9271a26d9f", [], [], "hexpm"},
   "parallel_stream": {:hex, :parallel_stream, "1.0.5", "4c78d3e675f9eff885cbe252c89a8fc1d2fb803c0d03a914281e587834e09431", [], [], "hexpm"},

@@ -6,7 +6,7 @@ defmodule IndiaInfo.Banks do
   import Ecto.Query, warn: false
   alias IndiaInfo.Repo
 
-  alias IndiaInfo.Banks.Bank
+  alias IndiaInfo.Banks.{Bank, Branch}
 
   @doc """
   Returns the list of banks.
@@ -36,6 +36,10 @@ defmodule IndiaInfo.Banks do
 
   """
   def get_bank!(id), do: Repo.get!(Bank, id)
+  
+  def get_branch_by_ifsc(ifsc) do
+    Repo.get_by(Branch, ifsc: ifsc)
+  end
 
   @doc """
   Creates a bank.
@@ -49,6 +53,13 @@ defmodule IndiaInfo.Banks do
       {:error, %Ecto.Changeset{}}
 
   """
+  def find_or_create_bank_by_name(name) do
+    case Repo.get_by(Bank, name: name) do
+      nil -> create_bank(%{name: name})
+      bank -> {:ok, bank}
+    end
+  end
+
   def create_bank(attrs \\ %{}) do
     %Bank{}
     |> Bank.changeset(attrs)
@@ -102,7 +113,6 @@ defmodule IndiaInfo.Banks do
     Bank.changeset(bank, %{})
   end
 
-  alias IndiaInfo.Banks.Branch
 
   @doc """
   Returns the list of branches.

@@ -7,7 +7,7 @@ defmodule IndiaInfo.Banks.Bank do
   schema "banks" do
     field :name, :string
 
-    has_many :branches, Branches
+    has_many :branches, Branch
 
     timestamps()
   end

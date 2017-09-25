@@ -6,7 +6,8 @@ defmodule IndiaInfo.Locations.District do
 
   schema "districts" do
     field :name, :string
-    field :state_id, :id
+    
+    belongs_to :state, IndiaInfo.Locations.State
 
     timestamps()
   end
@@ -14,7 +15,7 @@ defmodule IndiaInfo.Locations.District do
   @doc false
   def changeset(%District{} = district, attrs) do
     district
-    |> cast(attrs, [:name])
-    |> validate_required([:name])
+    |> cast(attrs, [:name, :state_id])
+    |> validate_required([:name, :state_id])
   end
-end
+end 
