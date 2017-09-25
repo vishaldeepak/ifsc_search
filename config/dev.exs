@@ -42,12 +42,14 @@ config :india_info, IndiaInfoWeb.Endpoint,
   ]
 
 # Do not include metadata nor timestamps in development logs
-config :logger, backends: [{LoggerFileBackend, :error_log}]
+config :logger,
+  backends: [:console, {LoggerFileBackend, :error_log}],
+  format: "$time $metadata[$level] $message\n"
 
 # configuration for the {LoggerFileBackend, :error_log} backend
-config :logger, :error_log,
-path: "/log/error.log",
-level: :error
+config :logger, :error_log, 
+  path: "log/error.log",
+  level: :error
 
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.

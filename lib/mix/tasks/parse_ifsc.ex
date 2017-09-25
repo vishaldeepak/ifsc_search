@@ -1,6 +1,7 @@
 defmodule Mix.Tasks.ParseIfsc do
   use Mix.Task
   require IEx
+  require Logger
 
   alias IndiaInfo.Locations
   alias IndiaInfo.Banks
