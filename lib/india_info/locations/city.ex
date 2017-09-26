@@ -17,5 +17,6 @@ defmodule IndiaInfo.Locations.City do
     city
     |> cast(attrs, [:name, :district_id])
     |> validate_required([:name, :district_id])
+    |> unique_constraint(:name, [name: :cities_name_district_id_index])
   end
 end
