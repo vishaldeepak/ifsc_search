@@ -5,8 +5,9 @@ defmodule IndiaInfo.Banks do
 
   import Ecto.Query, warn: false
   alias IndiaInfo.Repo
-
   alias IndiaInfo.Banks.{Bank, Branch}
+  alias IndiaInfo.Locations.City
+  alias Ecto.Multi
 
   @doc """
   Returns the list of banks.
@@ -36,7 +37,7 @@ defmodule IndiaInfo.Banks do
 
   """
   def get_bank!(id), do: Repo.get!(Bank, id)
-  
+
   def get_branch_by_ifsc(ifsc) do
     Repo.get_by(Branch, ifsc: ifsc)
   end
@@ -155,10 +156,45 @@ defmodule IndiaInfo.Banks do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_branch(attrs \\ %{}) do
+  def create_branch(attrs) do
+    create_branch_transaction(attrs)
+    |> Repo.transaction
+  end
+
+  defp create_branch_transaction(attrs) do
+    Multi.new
+    |> Multi.run(:insert,  fn _ -> insert_branch(attrs) end )
+    |> Multi.run(:update, &update_branch_tags_document/1)
+  end
+
+  defp insert_branch(attrs \\ %{}) do
     %Branch{}
     |> Branch.changeset(attrs)
     |> Repo.insert()
+  end
+
+  defp update_branch_tags_document(%{insert: branch}) do
+    city =
+      Repo.get(City, branch.city_id)
+      |> Repo.preload(district: :state)
+
+    bank_uuid = Repo.get(Bank, branch.bank_id).uuid
+    tags = [city.uuid, city.district.uuid, city.district.state.uuid, bank_uuid]
+
+    a_text = branch.name
+    b_text =
+      [branch.address, city.name, city.district.name, city.district.state.name]
+      |> Enum.map(&(String.split(&1)))
+      |> List.flatten
+      |> Enum.uniq
+      |> Enum.filter(&(&1))
+      |> Enum.join(" ")
+
+    from(b in Branch, where: b.id == ^branch.id, update: [set:
+      [tags: ^tags,
+      document: fragment("setweight(to_tsvector('simple', ?), 'A') || setweight(to_tsvector('simple', ?), 'B')", ^a_text, ^b_text)]])
+    |> Repo.update_all([])
+    {:ok, branch}
   end
 
   @doc """
