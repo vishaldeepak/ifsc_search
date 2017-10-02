@@ -25,6 +25,10 @@ defmodule IndiaInfoWeb.BankController do
     end
   end
 
+  def branch_search(conn, params) do
+    render(conn, "branch_search.html")
+  end
+
   def show(conn, %{"id" => id}) do
     bank = Banks.get_bank!(id)
     render(conn, "show.html", bank: bank)
