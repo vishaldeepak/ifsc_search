@@ -3,6 +3,7 @@ defmodule IndiaInfo.Banks.Branch do
   import Ecto.Changeset
   alias IndiaInfo.Banks.{Bank, Branch}
   alias IndiaInfo.Locations.City
+  alias IndiaInfo.Repo
 
 
   schema "branches" do
@@ -10,7 +11,8 @@ defmodule IndiaInfo.Banks.Branch do
     field :contact_no, :string
     field :ifsc, :string
     field :name, :string
-    
+    field :tags, {:array, :string}
+
     belongs_to :bank, Bank
     belongs_to :city, City
 
