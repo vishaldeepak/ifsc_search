@@ -22,7 +22,8 @@ defmodule Mix.Tasks.ParseIfsc do
       start_location = "./build_data/IFSC_data"
 
       total_rows =
-        File.ls!(start_location)
+        start_location
+        |> File.ls!
         |> Enum.filter(fn(file) -> Regex.match?(~r/.+\.xlsx$/, file) end)
         |> Enum.map(fn(file) -> "#{start_location}/#{file}"  end)
         |> Enum.reduce(0, &process_file/2)
@@ -36,20 +37,21 @@ defmodule Mix.Tasks.ParseIfsc do
       {:ok, table_id} = Xlsxir.multi_extract(file, 0)
       row_count = Xlsxir.get_multi_info(table_id, :rows)
 
-      Xlsxir.get_list(table_id)
+      table_id
+      |> Xlsxir.get_list()
       |> Enum.drop(1)
       |> Enum.each(&process_row/1)
 
       Xlsxir.close(table_id)
 
-      (row_count-1) + total_count
+      (row_count - 1) + total_count
     end
 
     defp process_row row do
       try do
-        {:ok ,state} = Locations.find_or_create_state_by_name(row |> Enum.fetch!(@map_sheet[:state]))
-        {:ok ,district} = Locations.find_or_create_district_by_name(row |> Enum.fetch!(@map_sheet[:district]), state.id)
-        {:ok ,city} = Locations.find_or_create_city_by_name(row |> Enum.fetch!(@map_sheet[:city]), district.id)
+        {:ok, state} = Locations.find_or_create_state_by_name(row |> Enum.fetch!(@map_sheet[:state]))
+        {:ok, district} = Locations.find_or_create_district_by_name(row |> Enum.fetch!(@map_sheet[:district]), state.id)
+        {:ok, city} = Locations.find_or_create_city_by_name(row |> Enum.fetch!(@map_sheet[:city]), district.id)
         {:ok, bank} = Banks.find_or_create_bank_by_name row |> Enum.fetch!(@map_sheet[:bank])
 
         case Banks.get_branch_by_ifsc(row |> Enum.fetch!(@map_sheet[:ifsc])) do

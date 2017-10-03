@@ -157,13 +157,14 @@ defmodule IndiaInfo.Banks do
 
   """
   def create_branch(attrs) do
-    create_branch_transaction(attrs)
+    attrs
+    |> create_branch_transaction()
     |> Repo.transaction
   end
 
   defp create_branch_transaction(attrs) do
     Multi.new
-    |> Multi.run(:insert,  fn _ -> insert_branch(attrs) end )
+    |> Multi.run(:insert, fn _ -> insert_branch(attrs) end)
     |> Multi.run(:update, &update_branch_tags_document/1)
   end
 
@@ -175,7 +176,8 @@ defmodule IndiaInfo.Banks do
 
   defp update_branch_tags_document(%{insert: branch}) do
     city =
-      Repo.get(City, branch.city_id)
+      City
+      |> Repo.get(branch.city_id)
       |> Repo.preload(district: :state)
 
     bank_uuid = Repo.get(Bank, branch.bank_id).uuid
@@ -190,10 +192,10 @@ defmodule IndiaInfo.Banks do
       |> Enum.filter(&(&1))
       |> Enum.join(" ")
 
-    from(b in Branch, where: b.id == ^branch.id, update: [set:
+    query = from(b in Branch, where: b.id == ^branch.id, update: [set:
       [tags: ^tags,
       document: fragment("setweight(to_tsvector('simple', ?), 'A') || setweight(to_tsvector('simple', ?), 'B')", ^a_text, ^b_text)]])
-    |> Repo.update_all([])
+    Repo.update_all(query, [])
     {:ok, branch}
   end
 
