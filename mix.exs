@@ -42,7 +42,8 @@ defmodule IndiaInfo.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:xlsxir, github: "jsonkennell/xlsxir"},
-      {:logger_file_backend, "~> 0.0.10"}
+      {:logger_file_backend, "~> 0.0.10"},
+      {:credo, "~> 0.8", only: [:dev, :test], runtime: false}
     ]
   end
 
