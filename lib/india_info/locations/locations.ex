@@ -5,6 +5,7 @@ defmodule IndiaInfo.Locations do
 
   import Ecto.Query, warn: false
   alias IndiaInfo.Repo
+  alias IndiaInfo.Helpers.QueryHelper
 
   alias IndiaInfo.Locations.State
 
@@ -17,9 +18,19 @@ defmodule IndiaInfo.Locations do
       [%State{}, ...]
 
   """
-  def list_states do
-    Repo.all(State)
+  def list_states(selections \\ nil) do
+    query = from s in State
+    query
+    |> QueryHelper.select_columns(selections)
+    |> Repo.all
   end
+
+  # def list_states(selections \\ nil) do
+  #   query = from s in Post
+  #   query
+  #   |> District.select_columns(selections)
+  #   |> Repo.all
+  # end
 
   @doc """
   Gets a single state.
@@ -223,6 +234,10 @@ defmodule IndiaInfo.Locations do
   """
   def change_district(%District{} = district) do
     District.changeset(district, %{})
+  end
+
+  def district_search(search_text, state_id \\ nil) do
+    query = from d in District
   end
 
   alias IndiaInfo.Locations.City

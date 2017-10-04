@@ -9,6 +9,8 @@ defmodule IndiaInfo.Locations.State do
     field :uuid, :binary_id
     field :code, :string, size: 2
 
+    has_many :districts, IndiaInfo.Locations.District
+    has_many :cities, through: [:districts, :cities]
     timestamps()
   end
 

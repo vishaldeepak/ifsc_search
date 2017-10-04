@@ -17,10 +17,10 @@ defmodule IndiaInfoWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/ifsc_search", BankController, :branch_search
+    get "/ifsc_search", BranchController, :branch_search
+    post "/locations/districts/by_state", Locations.DistrictController, :by_state
+
     resources "/banks", BankController
-
-
     resources "/states", StateController
 
   end
