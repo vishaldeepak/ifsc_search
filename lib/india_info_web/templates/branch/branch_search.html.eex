@@ -1,0 +1,22 @@
+<h2 id="element" class="nav">Narrow down Your Search</h2>
+<div>
+  <div>
+    <h3>State</h3>
+    <select class="form-control" id="state-selector">
+      <option value="" selected="selected">Any State</option>
+      <%= for state <- @states do %>
+        <option value="<%= state.id %>"><%= state.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div>
+    <h3>District</h3>
+    <select class="form-control" id="city-selector">
+    </select>
+  </div>
+  <div>
+    <h3>City</h3>
+    <select class="form-control" id="province-selector">
+    </select>
+  </div>
+</div>
