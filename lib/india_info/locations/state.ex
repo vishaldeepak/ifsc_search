@@ -7,6 +7,7 @@ defmodule IndiaInfo.Locations.State do
   schema "states" do
     field :name, :string
     field :uuid, :binary_id
+    field :code, :string, size: 2
 
     timestamps()
   end
@@ -14,9 +15,12 @@ defmodule IndiaInfo.Locations.State do
   @doc false
   def changeset(%State{} = state, attrs) do
     state
-    |> cast(attrs, [:name])
-    |> validate_required([:name])
+    |> cast(attrs, [:name, :code])
+    |> validate_required([:name, :code])
+    |> validate_length(:code, is: 2)
+    |> update_change(:code, &(String.upcase(&1)))
     |> unique_constraint(:name)
+    |> unique_constraint(:code)
     |> ChangesetHelper.set_uuid()
   end
 end
