@@ -2,7 +2,7 @@ defmodule IndiaInfo.Banks.Branch do
   use Ecto.Schema
   import Ecto.Changeset
   alias IndiaInfo.Banks.{Bank, Branch}
-  alias IndiaInfo.Locations.City
+  alias IndiaInfo.Locations.District
   alias IndiaInfo.Repo
 
 
@@ -11,10 +11,11 @@ defmodule IndiaInfo.Banks.Branch do
     field :contact_no, :string
     field :ifsc, :string
     field :name, :string
+    field :city_name, :string
     field :tags, {:array, :string}
 
     belongs_to :bank, Bank
-    belongs_to :city, City
+    belongs_to :district, District
 
     timestamps()
   end
@@ -22,8 +23,8 @@ defmodule IndiaInfo.Banks.Branch do
   @doc false
   def changeset(%Branch{} = branch, attrs) do
     branch
-    |> cast(attrs, [:name, :address, :ifsc, :contact_no, :bank_id, :city_id])
-    |> validate_required([:name, :address, :ifsc, :contact_no, :bank_id, :city_id])
+    |> cast(attrs, [:name, :address, :ifsc, :contact_no, :bank_id, :district_id, :city_name])
+    |> validate_required([:name, :address, :ifsc, :contact_no, :bank_id, :district_id, :city_name])
     |> unique_constraint(:ifsc)
   end
 end

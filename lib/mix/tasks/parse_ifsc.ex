@@ -49,15 +49,15 @@ defmodule Mix.Tasks.ParseIfsc do
 
     defp process_row row do
       try do
-        {:ok, state} = Locations.find_or_create_state_by_name(row |> Enum.fetch!(@map_sheet[:state]))
+        {:ok, state} = Locations.find_state_by_name_or_code(row |> Enum.fetch!(@map_sheet[:state]))
         {:ok, district} = Locations.find_or_create_district_by_name(row |> Enum.fetch!(@map_sheet[:district]), state.id)
-        {:ok, city} = Locations.find_or_create_city_by_name(row |> Enum.fetch!(@map_sheet[:city]), district.id)
-        {:ok, bank} = Banks.find_or_create_bank_by_name row |> Enum.fetch!(@map_sheet[:bank])
+        {:ok, bank} = Banks.find_or_create_bank_by_name(row |> Enum.fetch!(@map_sheet[:bank]))
 
         case Banks.get_branch_by_ifsc(row |> Enum.fetch!(@map_sheet[:ifsc])) do
           nil ->
             Banks.create_branch(%{bank_id: bank.id,
-            city_id: city.id,
+            district_id: district.id,
+            city_name: to_string(@map_sheet[:city]),
             name: row |> Enum.fetch!(@map_sheet[:branch]),
             ifsc: row |> Enum.fetch!(@map_sheet[:ifsc]),
             contact_no: row |> Enum.fetch!(@map_sheet[:contact_no]) |> to_string,
@@ -66,7 +66,7 @@ defmodule Mix.Tasks.ParseIfsc do
           _ -> nil
         end
       rescue
-         e -> Logger.error "Error in process_row" <> e.message
+         e -> Logger.error "Error in process_row"
       end
     end
   end

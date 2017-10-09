@@ -6,7 +6,7 @@ defmodule IndiaInfo.Banks do
   import Ecto.Query, warn: false
   alias IndiaInfo.Repo
   alias IndiaInfo.Banks.{Bank, Branch}
-  alias IndiaInfo.Locations.City
+  alias IndiaInfo.Locations.District
   alias Ecto.Multi
 
   @doc """
@@ -175,17 +175,17 @@ defmodule IndiaInfo.Banks do
   end
 
   defp update_branch_tags_document(%{insert: branch}) do
-    city =
-      City
-      |> Repo.get(branch.city_id)
-      |> Repo.preload(district: :state)
+    district =
+      District
+      |> Repo.get(branch.district_id)
+      |> Repo.preload(:state)
 
     bank_uuid = Repo.get(Bank, branch.bank_id).uuid
-    tags = [city.uuid, city.district.uuid, city.district.state.uuid, bank_uuid]
+    tags = [district.uuid, district.state.uuid, bank_uuid]
 
     a_text = branch.name
     b_text =
-      [branch.address, city.name, city.district.name, city.district.state.name]
+      [branch.address, branch.city_name, district.name, district.state.name]
       |> Enum.map(&(String.split(&1)))
       |> List.flatten
       |> Enum.uniq

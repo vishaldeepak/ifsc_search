@@ -16,7 +16,7 @@ defmodule IndiaInfo.Locations.State do
   def changeset(%State{} = state, attrs) do
     state
     |> cast(attrs, [:name, :code])
-    |> validate_required([:name, :code])
+    |> validate_required([:name])
     |> validate_length(:code, is: 2)
     |> update_change(:code, &(String.upcase(&1)))
     |> unique_constraint(:name)

@@ -5,7 +5,7 @@ defmodule IndiaInfo.Locations do
 
   import Ecto.Query, warn: false
   alias IndiaInfo.Repo
-
+  require IEx
   alias IndiaInfo.Locations.State
 
   @doc """
@@ -41,8 +41,13 @@ defmodule IndiaInfo.Locations do
   Looks for a state given the name. If found return the state struct else
   returns nil
   """
-  def find_or_create_state_by_name(name) do
-    case Repo.get_by(State, name: name) do
+  def find_state_by_name_or_code(name) do
+    if String.length(name) == 2 do
+      query = from s in State, where: ilike(s.code, ^name)
+    else
+      query = from s in State, where: ilike(s.name, ^name)
+    end
+    case Repo.one(query) do
       nil -> create_state(%{name: name})
       state -> {:ok, state}
     end
@@ -259,7 +264,7 @@ defmodule IndiaInfo.Locations do
       nil -> create_city(%{name: name, district_id: district_id})
       city -> {:ok, city}
     end
-  end  
+  end
 
   @doc """
   Creates a city.
