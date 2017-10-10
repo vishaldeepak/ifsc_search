@@ -5,7 +5,7 @@ defmodule IndiaInfo.Locations do
 
   import Ecto.Query, warn: false
   alias IndiaInfo.Repo
-  require IEx
+
   alias IndiaInfo.Locations.State
 
   @doc """

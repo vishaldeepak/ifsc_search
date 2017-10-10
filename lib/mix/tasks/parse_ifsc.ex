@@ -40,16 +40,17 @@ defmodule Mix.Tasks.ParseIfsc do
       table_id
       |> Xlsxir.get_list()
       |> Enum.drop(1)
-      |> Enum.each(&process_row/1)
+      |> Enum.each(fn row -> process_row(row, file) end)
 
       Xlsxir.close(table_id)
 
       (row_count - 1) + total_count
     end
 
-    defp process_row row do
+    defp process_row row, file do
       try do
-        {:ok, state} = Locations.find_state_by_name_or_code(row |> Enum.fetch!(@map_sheet[:state]))
+
+        {:ok, state} = Locations.find_state_by_name_or_code(row |> Enum.fetch!(@map_sheet[:state]) |> get_proper_state_name)
         {:ok, district} = Locations.find_or_create_district_by_name(row |> Enum.fetch!(@map_sheet[:district]), state.id)
         {:ok, bank} = Banks.find_or_create_bank_by_name(row |> Enum.fetch!(@map_sheet[:bank]))
 
@@ -66,7 +67,18 @@ defmodule Mix.Tasks.ParseIfsc do
           _ -> nil
         end
       rescue
-         e -> Logger.error "Error in process_row"
+         e ->
+          Logger.error "Error in process_row " <> file <> "  " <> to_string(Enum.fetch!(row, @map_sheet[:ifsc]))
+      end
+    end
+
+    defp get_proper_state_name state_name do
+      case state_name do
+        "GREATER MUMBAI" -> "Maharashtra"
+        "NEW DELHI" -> "Delhi"
+        "KARANATAKA" -> "Karnataka"
+        "GUJRAT" -> "Gujarat"
+        _ -> state_name
       end
     end
   end
