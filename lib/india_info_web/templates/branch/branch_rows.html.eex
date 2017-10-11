@@ -1,0 +1,16 @@
+  <table class="table table-stripped table-responsive">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>IFSC</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= for branch <- @branches do %>
+    <tr>
+      <td><%= branch.name %></td>
+      <td><%= branch.ifsc %></td>
+    <tr>
+    <% end %>
+    </tbody>
+  </table>

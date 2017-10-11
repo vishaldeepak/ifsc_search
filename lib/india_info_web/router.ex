@@ -18,6 +18,7 @@ defmodule IndiaInfoWeb.Router do
 
     get "/", PageController, :index
     get "/ifsc_search", BranchController, :branch_search
+    post "/ifsc_search", BranchController, :branch_search
     post "/locations/districts/by_state", Locations.DistrictController, :by_state
 
     resources "/banks", BankController

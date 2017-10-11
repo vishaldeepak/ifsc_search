@@ -20,4 +20,6 @@ import "phoenix_html"
 
 // import socket from "./socket"
 
-console.log($("div"));
+import Branch from "./branch"
+
+Branch.init()

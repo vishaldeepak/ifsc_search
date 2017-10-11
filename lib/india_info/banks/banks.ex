@@ -7,6 +7,8 @@ defmodule IndiaInfo.Banks do
   alias IndiaInfo.Repo
   alias IndiaInfo.Banks.{Bank, Branch}
   alias IndiaInfo.Locations.District
+  alias IndiaInfo.Helpers.QueryHelper
+
   alias Ecto.Multi
 
   @doc """
@@ -18,8 +20,10 @@ defmodule IndiaInfo.Banks do
       [%Bank{}, ...]
 
   """
-  def list_banks do
-    Repo.all(Bank)
+  def list_banks(selections \\ nil) do
+    Bank
+    |> QueryHelper.select_columns(selections)
+    |> Repo.all
   end
 
   @doc """
@@ -244,5 +248,14 @@ defmodule IndiaInfo.Banks do
   """
   def change_branch(%Branch{} = branch) do
     Branch.changeset(branch, %{})
+  end
+
+  def branch_search(bank_id, search_term, state_id) do
+    Branch
+    |> QueryHelper.search_document(search_term)
+    |> where([q], q.bank_id == ^bank_id)
+    |> Branch.search_in_state(state_id)
+    |> limit(100)
+    |> Repo.all
   end
 end
