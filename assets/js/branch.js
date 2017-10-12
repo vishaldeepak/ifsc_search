@@ -1,19 +1,19 @@
 let Branch = {
   init(){
-    let state_selector = $("#state_select")
-    let bank_selector = $("#bank_select")
-    let search_term = $("#branch-search .branch-text")
-    let submit = $("#branch-search .submit")
+    let _state_selector = $("#state_select")
+    let _bank_selector = $("#bank_select")
+    let _form = $("form#branch-search")
+    let _search_term = $("#branch-search .branch-text")
     let csrf = document.querySelector("meta[name=csrf]").content;
-    submit.on("click", function(event) {
-
+    _form.on("submit", function(event) {
+      event.preventDefault()
       $.ajax({
         url:  "/ifsc_search",
         type: 'POST',
         data: {
-          state_id: state_selector.val(),
-          bank_id: bank_selector.val(),
-          search_term: search_term.val()
+          state_id: _state_selector.val(),
+          bank_id: _bank_selector.val(),
+          search_term: _search_term.val()
         },
         headers: {
             "X-CSRF-TOKEN": csrf

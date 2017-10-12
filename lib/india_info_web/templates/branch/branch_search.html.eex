@@ -1,19 +1,19 @@
 <h2>Narrow down Your Search</h2>
 <div>
   <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
-  <div id="branch-search">
+  <form id="branch-search" data-parsley-validate>
     <div class="form-group">
-      <%= select(:bank, :select, Enum.map(@banks, &{&1.name, &1.id}), prompt: "Choose Bank", class: "form-control") %>
+      <%= select(:bank, :select, Enum.map(@banks, &{&1.name, &1.id}), prompt: "Choose Bank", class: "form-control", required: "") %>
     </div>
     <div class="form-group">
-      <%= select(:state, :select, Enum.map(@states, &{&1.name, &1.id}), prompt: "Choose State", class: "form-control") %>
+      <%= select(:state, :select, Enum.map(@states, &{&1.name, &1.id}), prompt: "Choose State", class: "form-control", required: "") %>
     </div>
     <div class="form-group">
       <input class="form-control branch-text" placeholder="Enter Text Like- Anna Nagar, Chennai"></input>
     </div>
-    <button class="btn btn-success submit">Search</button>
+    <button class="btn btn-success submit" value="validate">Search</button>
   </div>
-</div>
+</form>
 <div id="branch-search-results">
 
 </div>

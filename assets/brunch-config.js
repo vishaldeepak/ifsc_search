@@ -72,7 +72,8 @@ exports.config = {
       $: 'jquery',
       jQuery: 'jquery',
       Popper: 'popper.js',
-      bootstrap: 'bootstrap'
+      bootstrap: 'bootstrap',
+      Parsley: 'parsleyjs'
     }
   }
 };
