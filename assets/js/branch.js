@@ -4,7 +4,7 @@ let Branch = {
     let _bank_selector = $("#bank_select")
     let _form = $("form#branch-search")
     let _search_term = $("#branch-search .branch-text")
-    let csrf = document.querySelector("meta[name=csrf]").content;
+    let csrf = $("meta[name=csrf]").attr("content")
     _form.on("submit", function(event) {
       event.preventDefault()
       if(_form.parsley().isValid())

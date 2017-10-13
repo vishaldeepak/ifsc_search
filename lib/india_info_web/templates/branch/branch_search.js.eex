@@ -1,1 +1,1 @@
-$("#branch-search-results").html("<%= escape_javascript render("branch_rows.html", branches: @branches) %>");
+$("#branch-search-results").html("<%= escape_javascript render("branch_rows.html", branches: @branches, conn: @conn) %>");

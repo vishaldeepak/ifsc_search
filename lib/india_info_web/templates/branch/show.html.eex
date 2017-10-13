@@ -1,0 +1,32 @@
+<h2>Show Bank</h2>
+
+<ul>
+  <li>
+    <strong>Name:</strong>
+    <%= @branch.name %>
+  </li>
+  <li>
+    <strong>Address:</strong>
+    <%= @branch.address %>
+  </li>
+  <li>
+    <strong>Contact No:</strong>
+    <%= @branch.contact_no %>
+  </li>
+  <li>
+    <strong>IFSC Code:</strong>
+    <%= @branch.ifsc %>
+  </li>
+  <li>
+    <strong>City:</strong>
+    <%= @branch.city_name %>
+  </li>
+  <li>
+    <strong>District:</strong>
+    <span class="text-cap"><%= @branch.district.name %></span>
+  </li>
+  <li>
+    <strong>State:</strong>
+    <%= @branch.district.state.name %>
+  </li>
+</ul>

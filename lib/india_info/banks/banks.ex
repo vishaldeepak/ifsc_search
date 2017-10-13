@@ -146,7 +146,7 @@ defmodule IndiaInfo.Banks do
       ** (Ecto.NoResultsError)
 
   """
-  def get_branch!(id), do: Repo.get!(Branch, id)
+  def get_branch!(id), do: Repo.get!(Branch, id) |> Repo.preload(district: :state)
 
   @doc """
   Creates a branch.
