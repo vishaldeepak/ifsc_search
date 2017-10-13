@@ -7,22 +7,30 @@ let Branch = {
     let csrf = document.querySelector("meta[name=csrf]").content;
     _form.on("submit", function(event) {
       event.preventDefault()
-      $.ajax({
-        url:  "/ifsc_search",
-        type: 'POST',
-        data: {
-          state_id: _state_selector.val(),
-          bank_id: _bank_selector.val(),
-          search_term: _search_term.val()
-        },
-        headers: {
-            "X-CSRF-TOKEN": csrf
-        },
-        error: function(data) {
-          console.log("Error in response")
-        }
-      })
+      if(_form.parsley().isValid())
+      {
+        $.ajax({
+          url:  "/ifsc_search",
+          type: 'POST',
+          data: {
+            state_id: _state_selector.val(),
+            bank_id: _bank_selector.val(),
+            search_term: _search_term.val()
+          },
+          headers: {
+              "X-CSRF-TOKEN": csrf
+          },
+          error: function(data) {
+            console.log("Error in response")
+          }
+        })
+      }
     })
+    this.intializeSelect2(_state_selector, _bank_selector)
+  },
+  intializeSelect2(_state_selector, _bank_selector){
+    _state_selector.select2()
+    _bank_selector.select2()
   }
 }
 

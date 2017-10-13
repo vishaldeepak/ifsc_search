@@ -21,5 +21,9 @@ import "phoenix_html"
 // import socket from "./socket"
 
 import Branch from "./branch"
+import ValidationConfig from "./validation_config"
+
+$.fn.select2.defaults.set( "theme", "bootstrap" );
 
 Branch.init()
+ValidationConfig.init()

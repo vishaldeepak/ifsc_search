@@ -11,8 +11,12 @@ defmodule IndiaInfo.Helpers.QueryHelper do
 
   @spec search_document(Ecto.Query, String) :: Ecto.Query
   def search_document(query, search_term) do
-    query
-    |> where([q], fragment("? @@ to_tsquery('simple', ?)", q.document, ^parse_terms_for_document(search_term)))
+    if !(String.length(search_term) == 0) do
+      query
+      |> where([q], fragment("? @@ to_tsquery('simple', ?)", q.document, ^parse_terms_for_document(search_term)))
+    else
+      query
+    end
   end
 
   defp parse_terms_for_document(search_term) do

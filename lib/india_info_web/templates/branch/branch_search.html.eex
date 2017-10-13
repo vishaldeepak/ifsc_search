@@ -2,10 +2,10 @@
 <div>
   <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
   <form id="branch-search" data-parsley-validate>
-    <div class="form-group">
+    <div class="form-group error-con">
       <%= select(:bank, :select, Enum.map(@banks, &{&1.name, &1.id}), prompt: "Choose Bank", class: "form-control", required: "") %>
     </div>
-    <div class="form-group">
+    <div class="form-group  error-con">
       <%= select(:state, :select, Enum.map(@states, &{&1.name, &1.id}), prompt: "Choose State", class: "form-control", required: "") %>
     </div>
     <div class="form-group">
