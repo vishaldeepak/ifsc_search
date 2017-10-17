@@ -15,7 +15,7 @@ defmodule Mix.Tasks.ParseIfsc do
 
     @shortdoc "Parse IFSC codes"
 
-    @map_sheet %{bank: 0, ifsc: 1, branch: 3, address: 4, contact_no: 5, city: 6, district: 7, state: 8}
+    @map_sheet %{bank: 0, ifsc: 1, micr: 2, branch: 3, address: 4, contact_no: 5, city: 6, district: 7, state: 8}
 
     def run(_args) do
       Mix.Task.run "app.start"
@@ -56,11 +56,12 @@ defmodule Mix.Tasks.ParseIfsc do
 
         case Banks.get_branch_by_ifsc(row |> Enum.fetch!(@map_sheet[:ifsc])) do
           nil ->
-            Banks.create_branch(%{bank_id: bank.id,
+            result = Banks.create_branch(%{bank_id: bank.id,
             district_id: district.id,
             city_name: to_string(@map_sheet[:city]),
             name: row |> Enum.fetch!(@map_sheet[:branch]),
             ifsc: row |> Enum.fetch!(@map_sheet[:ifsc]),
+            micr: row |> Enum.fetch!(@map_sheet[:micr]) |> to_string,
             contact_no: row |> Enum.fetch!(@map_sheet[:contact_no]) |> to_string,
             address: row |> Enum.fetch!(@map_sheet[:address])
             })
