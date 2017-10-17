@@ -69,7 +69,7 @@ defmodule Mix.Tasks.ParseIfsc do
         end
       rescue
          e ->
-          Logger.error "Error in process_row " <> file <> "  " <> to_string(Enum.fetch!(row, @map_sheet[:ifsc]))
+          Logger.error "Error in process_row " <> file <> "  " <> to_string(Enum.fetch!(row, @map_sheet[:ifsc])) <>  Exception.format(:error, e)
       end
     end
 

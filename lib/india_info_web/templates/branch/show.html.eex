@@ -18,6 +18,10 @@
     <%= @branch.ifsc %>
   </li>
   <li>
+    <strong>MICR Code:</strong>
+    <%= @branch.micr %>
+  </li>
+  <li>
     <strong>City:</strong>
     <%= @branch.city_name %>
   </li>
