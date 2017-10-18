@@ -1,3 +1,52 @@
 #branch-search-results{
   margin-top: 20px;
 }
+
+#submit-ifsc{
+  width: 150px;
+  background-color: #2e6e8c;
+  border-color: #2e6e8c;
+}
+
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #2098D1;
+  height: 4px;
+}
+.hvr-underline-from-center.active-anim:before{
+  -webkit-animation-name: underline-anime;
+  animation-name: underline-anime;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+
+@keyframes underline-anime {
+  70%, 100% {
+    left: 0;
+    right: 0;
+  }
+}

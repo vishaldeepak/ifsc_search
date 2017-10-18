@@ -12,7 +12,9 @@
     <div class="form-group">
       <input class="form-control branch-text" placeholder="City with Address-Ex Anna Nagar, Chennai"></input>
     </div>
-    <button class="btn btn-success submit" value="validate">Search</button>
+    <div class="text-center">
+    <button class="btn btn-success hvr-underline-from-center" id="submit-ifsc" value="validate">Search</button>
+    </div>
   </form>
 </div>
 <div id="branch-search-results">

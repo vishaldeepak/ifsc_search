@@ -9,6 +9,8 @@ let Branch = {
       event.preventDefault()
       if(_form.parsley().isValid())
       {
+        $("#submit-ifsc").addClass("active-anim")
+        $("#submit-ifsc").attr("disabled", true)
         $.ajax({
           url:  "/ifsc_search",
           type: 'POST',
@@ -22,6 +24,10 @@ let Branch = {
           },
           error: function(data) {
             console.log("Error in response")
+          },
+          complete: function(data) {
+            $("#submit-ifsc").removeClass("active-anim")
+            $("#submit-ifsc").removeAttr("disabled")
           }
         })
       }
