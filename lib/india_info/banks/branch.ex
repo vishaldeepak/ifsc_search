@@ -4,7 +4,6 @@ defmodule IndiaInfo.Banks.Branch do
   import Ecto.Query, warn: false
   alias IndiaInfo.Banks.{Bank, Branch}
   alias IndiaInfo.Locations.District
-  alias IndiaInfo.Repo
 
 
   schema "branches" do

@@ -172,7 +172,7 @@ defmodule IndiaInfo.Banks do
     |> Multi.run(:update, &update_branch_tags_document/1)
   end
 
-  defp insert_branch(attrs \\ %{}) do
+  defp insert_branch(attrs) do
     %Branch{}
     |> Branch.changeset(attrs)
     |> Repo.insert()

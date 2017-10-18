@@ -56,7 +56,7 @@ defmodule Mix.Tasks.ParseIfsc do
 
         case Banks.get_branch_by_ifsc(row |> Enum.fetch!(@map_sheet[:ifsc])) do
           nil ->
-            result = Banks.create_branch(%{bank_id: bank.id,
+            Banks.create_branch(%{bank_id: bank.id,
             district_id: district.id,
             city_name: to_string(@map_sheet[:city]),
             name: row |> Enum.fetch!(@map_sheet[:branch]),
