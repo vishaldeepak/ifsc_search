@@ -1,2 +1,6 @@
+.text-cap::first-letter { text-transform: uppercase; }
 .text-cap { text-transform: lowercase; }
-.text-cap:first-letter { text-transform: uppercase; }
+
+.cursor-pointer{
+  cursor: pointer;
+}

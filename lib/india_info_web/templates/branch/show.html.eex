@@ -1,4 +1,4 @@
-<h2>Show Bank</h2>
+<h2>Branch Description</h2>
 
 <ul>
   <li>
@@ -11,7 +11,7 @@
   </li>
   <li>
     <strong>Contact No:</strong>
-    <%= @branch.contact_no %>
+    <%= set_contact_no @branch.contact_no %>
   </li>
   <li>
     <strong>IFSC Code:</strong>
@@ -27,10 +27,10 @@
   </li>
   <li>
     <strong>District:</strong>
-    <span class="text-cap"><%= @branch.district.name %></span>
+    <div class="text-cap"><%= @branch.district.name %></div>
   </li>
   <li>
     <strong>State:</strong>
-    <%= @branch.district.state.name %>
+    <div class="text-cap"><%= @branch.district.state.name %></div>
   </li>
 </ul>
