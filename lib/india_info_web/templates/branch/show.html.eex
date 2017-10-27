@@ -1,36 +1,36 @@
-<h2>Branch Description</h2>
+<h2>Branch Details</h2>
 
-<ul>
-  <li>
-    <strong>Name:</strong>
-    <%= @branch.name %>
+<ul class="unstyled-list">
+  <li class="row">
+    <div class="col-sm-3"><strong>Name</strong></div>
+    <div class="text-cap col-sm-8"><%= @branch.name %></div>
   </li>
-  <li>
-    <strong>Address:</strong>
-    <%= @branch.address %>
+  <li class="row">
+    <div class="col-sm-3"><strong>IFSC Code</strong></div>
+    <div class="col-sm-8"><%= @branch.ifsc %></div>
   </li>
-  <li>
-    <strong>Contact No:</strong>
-    <%= set_contact_no @branch.contact_no %>
+  <li class="row">
+    <div class="col-sm-3"><strong>MICR Code:</strong></div>
+    <div class="col-sm-8"><%= @branch.micr %></div>
   </li>
-  <li>
-    <strong>IFSC Code:</strong>
-    <%= @branch.ifsc %>
+  <li class="row">
+    <div class="col-sm-3"><strong>Address:</strong></div>
+    <div class="col-sm-8"><%= @branch.address %></div>
   </li>
-  <li>
-    <strong>MICR Code:</strong>
-    <%= @branch.micr %>
+  <li class="row">
+    <div class="col-sm-3"><strong>City:</strong></div>
+    <div class="text-cap col-sm-8"><%= @branch.city_name %></div>
   </li>
-  <li>
-    <strong>City:</strong>
-    <%= @branch.city_name %>
+  <li class="row">
+    <div class="col-sm-3"><strong>District:</strong></div>
+    <div class="text-cap col-sm-8"><%= @branch.district.name %></div>
   </li>
-  <li>
-    <strong>District:</strong>
-    <div class="text-cap"><%= @branch.district.name %></div>
+  <li class="row">
+    <div class="col-sm-3"><strong>State:</strong></div>
+    <div class="text-cap col-sm-8"><%= @branch.district.state.name %></div>
   </li>
-  <li>
-    <strong>State:</strong>
-    <div class="text-cap"><%= @branch.district.state.name %></div>
+  <li class="row">
+    <div class="col-sm-3"><strong>Contact No:</strong></div>
+    <div class="col-sm-8"><%= set_contact_no @branch.contact_no %></div>
   </li>
 </ul>

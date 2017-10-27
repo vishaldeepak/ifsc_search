@@ -1,6 +1,25 @@
-.text-cap::first-letter { text-transform: uppercase; }
-.text-cap { text-transform: lowercase; }
+.unstyled-list{
+  list-style: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+
+  li{
+    background-color: #eff0f1;
+    margin-bottom: 10px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    min-height: 40px;
+  }
+}
+
 
 .cursor-pointer{
   cursor: pointer;
 }
+
+.text-cap::first-letter { text-transform: uppercase; }
+.text-cap { text-transform: lowercase; }
+
+
+

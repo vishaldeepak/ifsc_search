@@ -1,5 +1,5 @@
 <h4>Search any Branch in India</h4>
-<p>Select a state, bank. To refine your search you can include city with the street address of the Branch</p>
+<p>Select a Bank and State. To refine your search you can include city with the street address of the Branch</p>
 <div>
   <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
   <form id="branch-search" data-parsley-validate>
