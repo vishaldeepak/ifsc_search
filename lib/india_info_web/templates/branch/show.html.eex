@@ -6,6 +6,10 @@
     <div class="text-cap col-sm-8"><%= @branch.name %></div>
   </li>
   <li class="row">
+    <div class="col-sm-3"><strong>Bank</strong></div>
+    <div class="text-cap col-sm-8"><%= @branch.bank.name %></div>
+  </li>
+  <li class="row">
     <div class="col-sm-3"><strong>IFSC Code</strong></div>
     <div class="col-sm-8"><%= @branch.ifsc %></div>
   </li>
