@@ -19,11 +19,10 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
-
+import Common from "./common"
 import Branch from "./branch"
 import ValidationConfig from "./validation_config"
 
-$.fn.select2.defaults.set( "theme", "bootstrap" );
-
+Common.init()
 Branch.init()
 ValidationConfig.init()

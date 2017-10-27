@@ -11,11 +11,17 @@
   </li>
   <li class="row">
     <div class="col-sm-3"><strong>IFSC Code</strong></div>
-    <div class="col-sm-8"><%= @branch.ifsc %></div>
+    <div class="col-sm-8">
+      <%= @branch.ifsc %>
+      <i class="fa fa-files-o clipboard copy-icon" data-clipboard-text="<%= @branch.ifsc%>" aria-hidden="true"></i>
+    </div>
   </li>
   <li class="row">
     <div class="col-sm-3"><strong>MICR Code:</strong></div>
-    <div class="col-sm-8"><%= @branch.micr %></div>
+    <div class="col-sm-8">
+      <%= @branch.micr %>
+      <i class="fa fa-files-o clipboard copy-icon" data-clipboard-text="<%= @branch.micr%>" aria-hidden="true"></i>
+    </div>
   </li>
   <li class="row">
     <div class="col-sm-3"><strong>Address:</strong></div>

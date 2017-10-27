@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Hello IndiaInfo!</title>
+    <script src="https://use.fontawesome.com/cc4a7aa682.js"></script>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 

@@ -11,7 +11,10 @@
   <%= for branch <- @branches do %>
     <tr>
       <td class="text-cap"><%= link branch.name, to: branch_path(@conn, :show, branch) %></a></td>
-      <td><%= branch.ifsc %></td>
+      <td class="ifsc-row">
+        <%= branch.ifsc %>
+        <i class="fa fa-files-o clipboard copy-icon" data-clipboard-text="<%= branch.ifsc%>" aria-hidden="true"></i>
+      </td>
       <td><%= branch.address %></td>
     </tr>
   <% end %>
