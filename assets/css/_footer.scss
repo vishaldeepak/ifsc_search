@@ -1,0 +1,51 @@
+footer{
+  margin-top: 15px;
+  padding: 15px 10px 0px;
+  border-bottom: 10px solid #2E64FE;
+  background: grey;
+  text-align: center;
+  clear:both;/*Makes sure this element  cleared from in other float elements*/
+  color: brown;
+
+  .fa{
+    font-size: 2rem;
+    transition: all .2s ease-in-out;
+  }
+
+  .fa:hover{
+    transform: scale(1.2);
+  }
+
+  .fa.fa-github{
+    color: white;
+    margin-right: 20px;
+  }
+
+  .fa.fa-twitter{
+    color: #55acee;
+  }
+
+  p{
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -115px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+footer, .page-wrap:after {
+  height: 100px;
+}

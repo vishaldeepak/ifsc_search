@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="page-wrap">
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
@@ -26,11 +26,19 @@
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+      <div class="container">
+        <main role="main">
+          <%= render @view_module, @view_template, assigns %>
+        </main>
+      </div>
 
     </div> <!-- /container -->
+    <footer>
+      <p><a href="https://github.com/vishaldeepak/"><i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://twitter.com/nowvishal"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      </p>
+        <p>&copy; 2017 Vishal Deepak.</p>
+    </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
