@@ -1,0 +1,14 @@
+<h3>About</h3>
+<div class="about-div">
+  Hi there, thanks for using IFSC Search website. The website is aimed to be quick and easy way to get the IFSC code of desired branch while keeping the design minimal and aesthetically pleasing. For suggestions or complaints contact me on <a href="https://twitter.com/nowvishal">twitter</a>.
+</div>
+<div class="about-div">
+  <h4>Data Facts</h4>
+  <p> Total No of Banks: <strong><%=@bank_count%></strong></p>
+  <p> Total No of Branches: <strong><%=@branch_count%></strong></p>
+  <div>Powered By <a href="http://phoenixframework.org/">Phoenix FrameWork</a> and <a href="http://getbootstrap.com/">Bootstrap</a></div>
+</div>
+<div class="about-div">
+<h4>Policy</h4>
+  All the data is obtained from <a href="https://www.rbi.org.in/">RBI</a> and they are responsible for maintaining the correctness of information. All data is parsed to the best of our ability and this website is in no way responsible for any incorrectness in data.
+</div>

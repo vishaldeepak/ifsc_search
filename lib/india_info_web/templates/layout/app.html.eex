@@ -15,18 +15,13 @@
   <body>
     <div class="page-wrap">
       <header class="header">
-        <%= render "header.html" %>
+        <%= render "header.html", conn: @conn %>
       </header>
-
-
-
-
       <div class="container">
         <main role="main">
           <%= render @view_module, @view_template, assigns %>
         </main>
       </div>
-
     </div> <!-- /container -->
     <footer>
       <p><a href="https://github.com/vishaldeepak/"><i class="fa fa-github" aria-hidden="true"></i></a>

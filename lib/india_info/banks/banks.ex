@@ -42,9 +42,12 @@ defmodule IndiaInfo.Banks do
   """
   def get_bank!(id), do: Repo.get!(Bank, id)
 
+  def get_bank_count(), do: Repo.aggregate(Bank, :count, :id)
+
   def get_branch_by_ifsc(ifsc) do
     Repo.get_by(Branch, ifsc: ifsc)
   end
+
 
   @doc """
   Creates a bank.
@@ -148,6 +151,7 @@ defmodule IndiaInfo.Banks do
   """
   def get_branch!(id), do: Repo.get!(Branch, id) |> Repo.preload([:bank, district: :state])
 
+  def get_branch_count(), do: Repo.aggregate(Branch, :count, :id)
   @doc """
   Creates a branch.
 
