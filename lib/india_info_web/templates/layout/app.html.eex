@@ -9,6 +9,7 @@
 
     <title>Hello IndiaInfo!</title>
     <script src="https://use.fontawesome.com/cc4a7aa682.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 

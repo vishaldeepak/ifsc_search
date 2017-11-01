@@ -33,3 +33,12 @@
 
 .text-cap::first-letter { text-transform: uppercase; }
 .text-cap { text-transform: lowercase; }
+
+.navbar-brand{
+  font-family: 'Exo', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.navbar-light .navbar-brand{
+  color: rgba(0, 0, 0, 0.65);
+}
