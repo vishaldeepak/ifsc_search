@@ -21,8 +21,8 @@
   </tbody>
 </table>
 <% else %>
-  <div class="text-center">
-    <p>No branches found. Change Search Attributes</p>
+  <div class="text-center alert alert-danger">
+    No branches found. Change Search Attributes
   </div>
 
 <% end %>

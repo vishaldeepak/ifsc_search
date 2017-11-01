@@ -41,5 +41,11 @@ a:hover{
   margin-bottom: 10px;
 }
 
+.scroll-to-top{
+  font-size: 2rem;
+  cursor: pointer;
+  padding-right: 10px;
+}
+
 .text-cap::first-letter { text-transform: uppercase; }
 .text-cap { text-transform: lowercase; }

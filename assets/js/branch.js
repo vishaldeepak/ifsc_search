@@ -23,11 +23,16 @@ let Branch = {
               "X-CSRF-TOKEN": csrf
           },
           error: function(data) {
-            console.log("Error in response")
+            $("#branch-search-results").html("<div class='text-center alert alert-danger'> Something went wrong. Try Again </div>")
           },
           complete: function(data) {
             $("#submit-ifsc").removeClass("active-anim")
             $("#submit-ifsc").removeAttr("disabled")
+            if ($(document).height() > ($(window).height() + 100) ) {
+              $(".scroll-to-top").removeClass("d-none")
+             } else{
+              $(".scroll-to-top").addClass("d-none")
+             }
           }
         })
       }

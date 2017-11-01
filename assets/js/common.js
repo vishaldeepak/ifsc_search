@@ -15,6 +15,10 @@ let Common = {
           _element.tooltip('hide')
         }, 2000)
       })
+
+      $(document).on('click', '.scroll-to-top', function() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      })
   }
 }
 

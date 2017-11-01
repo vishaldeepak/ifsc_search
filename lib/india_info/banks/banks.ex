@@ -259,7 +259,7 @@ defmodule IndiaInfo.Banks do
     |> QueryHelper.search_document(search_term)
     |> where([q], q.bank_id == ^bank_id)
     |> Branch.search_in_state(state_id)
-    |> limit(100)
+    |> limit(150)
     |> Repo.all
   end
 end

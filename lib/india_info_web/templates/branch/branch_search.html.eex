@@ -1,4 +1,4 @@
-<h4>Search any Branch in India</h4>
+<h4>Get IFSC code of any Branch in India</h4>
 <p>Select a Bank and State. Optionally, to refine your search you can include city, street address of the Branch. Its recommended you give atleast the city/town name.</p>
 <div>
   <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
@@ -19,4 +19,8 @@
 </div>
 <div id="branch-search-results">
 
+</div>
+
+<div class="scroll-to-top text-right d-none">
+  <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>
 </div>
