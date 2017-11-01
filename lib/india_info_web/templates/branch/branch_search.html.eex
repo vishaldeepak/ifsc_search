@@ -1,5 +1,5 @@
 <h4>Search any Branch in India</h4>
-<p>Select a Bank and State. To refine your search you can include city with the street address of the Branch</p>
+<p>Select a Bank and State. Optionally, to refine your search you can include city, street address of the Branch. Its recommended you give atleast the city/town name.</p>
 <div>
   <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
   <form id="branch-search" data-parsley-validate>
@@ -10,9 +10,7 @@
       <%= select(:state, :select, Enum.map(@states, &{&1.name, &1.id}), prompt: "Choose State/Union Territory* ", class: "form-control", required: "") %>
     </div>
     <div class="form-group">
-      <div>
-        <input class="form-control branch-text" placeholder="City/Address"></input>
-      </div>
+      <input class="form-control branch-text" placeholder="City/Address"></input>
     </div>
     <div class="text-center">
     <button class="btn btn-success hvr-underline-from-center cursor-pointer" id="submit-ifsc" value="validate">Search</button>

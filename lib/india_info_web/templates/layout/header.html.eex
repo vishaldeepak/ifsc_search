@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">IFSC Search</a>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <%= link "IFSC Search", to: branch_path(@conn, :search_index), class: "navbar-brand"%>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+      <li class="nav-item">
+        <%= link "Home", to: branch_path(@conn, :search_index), class: "nav-link"%>
       </li>
       <li class="nav-item">
         <%= link "About", to: static_page_path(@conn, :about), class: "nav-link"%>

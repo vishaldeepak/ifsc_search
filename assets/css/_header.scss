@@ -1,10 +1,14 @@
-header{
+.header{
   border-top: 10px solid rgba(46, 158, 254, 0.33);
   margin-bottom: 40px;
 
   nav.navbar{
     background-color: rgba(0, 0, 0, 0.075) !important;
-    height: 70px;
+    padding: 0.8rem 1rem;
+
+    .nav-item .nav-link, .navbar-text{
+      color: black;
+    }
   }
 
   .navbar-brand{
@@ -18,16 +22,39 @@ header{
   }
 }
 
-.navbar-light .navbar-brand{
-  color: rgba(0, 0, 0, 0.65);
-}
+  .navbar-light .navbar-brand{
+    color: rgba(0, 0, 0, 0.65);
+  }
 
-@include media-breakpoint-up(md) {
-  ul.navbar-nav{
-    margin-left: 30px;
+  @include media-breakpoint-up(md) {
+    ul.navbar-nav{
+      margin-left: 30px;
 
-    li:first-child{
-      padding-right: 30px;
+      li:first-child{
+        padding-right: 30px;
+      }
     }
   }
+
+  @include media-breakpoint-down(sm){
+    ul.navbar-nav{
+      margin-top: 15px;
+
+      // list-style-type: circle;
+
+      li{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.43);
+        padding-left: 20px;
+      }
+    }
+
+    .navbar-text{
+      padding-left: 20px;
+    }
+  }
+
+  .header::after {
+    display: block;
+    clear: both;
+    content: "";
 }
