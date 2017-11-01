@@ -44,3 +44,5 @@
     <div class="col-sm-8"><%= set_contact_no @branch.contact_no %></div>
   </li>
 </ul>
+
+<div style="margin-bottom: 10px"><%= link "<  Back", to: branch_path(@conn, :search_index), class: "redirection" %></div>

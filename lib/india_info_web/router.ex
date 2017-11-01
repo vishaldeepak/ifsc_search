@@ -16,20 +16,17 @@ defmodule IndiaInfoWeb.Router do
   scope "/", IndiaInfoWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
-    get "/ifsc_search", BranchController, :search_index
+    # get "/", PageController, :index
+    get "/", BranchController, :search_index
     post "/ifsc_search", BranchController, :search_branch
 
     get "/about", StaticPageController, :about
 
-
-    post "/locations/districts/by_state", Locations.DistrictController, :by_state
+    # post "/locations/districts/by_state", Locations.DistrictController, :by_state
 
     resources "/branches", BranchController, only: [:show]
     resources "/banks", BankController
     resources "/states", StateController
-
-
   end
 
   # Other scopes may use custom stacks.
