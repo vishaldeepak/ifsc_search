@@ -3,6 +3,19 @@ defmodule IndiaInfoWeb.BranchController do
   alias IndiaInfo.Locations
   alias IndiaInfo.Banks
 
+  def search_via_code(conn, %{"code" => code}) do
+    branch = Banks.get_branch_by_ifsc(code)
+    if is_nil branch do
+      conn |> send_resp(404, "not found")
+    else
+      render(conn, "search_via_code.js", branch: branch)
+    end
+  end
+
+  def search_via_code(conn, _params) do
+    render(conn, "search_via_code.html")
+  end
+
   def show(conn, %{"id" => id}) do
     branch = Banks.get_branch!(id)
     render(conn, "show.html", branch: branch)

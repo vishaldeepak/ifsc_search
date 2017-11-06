@@ -21,8 +21,10 @@ import "phoenix_html"
 // import socket from "./socket"
 import Common from "./common"
 import Branch from "./branch"
+import SearchViaCode from "./search_via_code"
 import ValidationConfig from "./validation_config"
 
 Common.init()
 Branch.init()
+SearchViaCode.init()
 ValidationConfig.init()

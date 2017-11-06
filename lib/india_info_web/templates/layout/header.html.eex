@@ -9,6 +9,9 @@
         <%= link "Home", to: branch_path(@conn, :search_index), class: "nav-link"%>
       </li>
       <li class="nav-item">
+        <%= link "Search Via IFSC", to: branch_path(@conn, :search_via_code), class: "nav-link"%>
+      </li>
+      <li class="nav-item">
         <%= link "About", to: static_page_path(@conn, :about), class: "nav-link"%>
       </li>
     </ul>

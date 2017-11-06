@@ -2,3 +2,12 @@
   text-align: right;
   font-size: $font-size-sm;
 }
+
+input.parsley-error{
+  border-color: theme-color("danger");
+}
+
+
+.form-control.parsley-error:focus{
+  border-color: theme-color("danger");
+}

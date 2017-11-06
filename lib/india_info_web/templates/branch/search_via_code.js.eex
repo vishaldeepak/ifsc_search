@@ -1,0 +1,1 @@
+$("#search-via-code .result").html("<%= escape_javascript render("branch_details.html", branch: @branch, conn: @conn) %>");

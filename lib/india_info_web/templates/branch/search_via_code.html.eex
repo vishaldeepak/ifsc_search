@@ -1,0 +1,18 @@
+<div id="search-via-code">
+  <h4>Enter IFSC code to get Bank Branch Details</h4>
+
+  <form data-parsley-validate class="text-center">
+    <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
+    <p>Enter 11 digit IFSC code and get relevant branch details</p>
+    <div class="form-group center error-con">
+      <input class="form-control ifsc-input" placeholder="IFSC Code" required data-parsley-length="[11, 11]" data-parsley-error-message="IFSC Code should have exactly 11 Characters"></input>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-info hvr-underline-from-center cursor-pointer" id="submit-code-search" value="validate">Search</button>
+    </div>
+  </form>
+
+  <div class="result">
+
+  </div>
+</div>

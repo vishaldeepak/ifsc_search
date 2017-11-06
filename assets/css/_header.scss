@@ -30,9 +30,13 @@
     ul.navbar-nav{
       margin-left: 30px;
 
-      li:first-child{
+      li{
         padding-right: 30px;
       }
+    }
+
+    ul li a.nav-link:hover, .navbar-text:hover{
+      color: rgba(255, 0, 0, 0.68) !important;
     }
   }
 

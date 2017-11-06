@@ -44,8 +44,9 @@ defmodule IndiaInfo.Banks do
 
   def get_bank_count(), do: Repo.aggregate(Bank, :count, :id)
 
-  def get_branch_by_ifsc(ifsc) do
-    Repo.get_by(Branch, ifsc: ifsc)
+  def get_branch_by_ifsc(ifsc_code) do
+    ifsc_code = String.upcase ifsc_code
+    Repo.get_by(Branch, ifsc: ifsc_code) |> Repo.preload([:bank, district: :state])
   end
 
 
