@@ -6,6 +6,7 @@
   }
 }
 
+
 #submit-ifsc, #submit-code-search{
   width: 150px;
   background-color: #2e6e8c;
@@ -51,5 +52,66 @@
   70%, 100% {
     left: 0;
     right: 0;
+  }
+}
+
+
+@include media-breakpoint-between(md, md){
+  .branch-table{
+    .table th, .table td{
+      padding: 0.5rem;
+    }
+
+    .branch-address{
+      max-width: 340px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm){
+
+  // .table th, .table td{
+  //   padding: 0.5rem;
+  // }
+
+  .branch-table{
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      position: relative;
+      padding-left: 30%;
+    }
+
+    tr td:not(:last-child){
+      border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      // top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-transform: none
+    }
+
+    td:nth-of-type(1):before { content: "Name"; }
+    td:nth-of-type(2):before { content: "IFSC"; }
+    td:nth-of-type(3):before { content: "Address"; }
   }
 }

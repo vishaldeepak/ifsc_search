@@ -1,5 +1,5 @@
 <%= if Enum.count(@branches) != 0 do %>
-<table class="table table-striped table-responsive">
+<table class="table table-striped branch-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,7 +15,7 @@
         <%= branch.ifsc %>
         <i class="fa fa-files-o clipboard copy-icon" data-clipboard-text="<%= branch.ifsc%>" aria-hidden="true"></i>
       </td>
-      <td><%= branch.address %></td>
+      <td class="branch-address"><%= branch.address %></td>
     </tr>
   <% end %>
   </tbody>
