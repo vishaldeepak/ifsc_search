@@ -1,5 +1,5 @@
 <div id="search-via-code">
-  <h4>Enter IFSC code to get Bank Branch Details</h4>
+  <h1>Enter IFSC code to get a Bank's branch details</h1>
 
   <form data-parsley-validate class="text-center">
     <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">

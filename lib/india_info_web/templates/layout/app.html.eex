@@ -25,8 +25,8 @@
       </div>
     </div> <!-- /container -->
     <footer>
-      <p><a href="https://github.com/vishaldeepak/"><i class="fa fa-github" aria-hidden="true"></i></a>
-      <a href="https://twitter.com/nowvishal"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <p><a href="https://github.com/vishaldeepak/" aria-label="Goto My Github Page"><i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://twitter.com/nowvishal" aria-label="Goto My Twitter Page"><i class="fa fa-twitter" aria-hidden="true"></i></a>
       </p>
         <p>&copy; 2017 Vishal Deepak.</p>
     </footer>

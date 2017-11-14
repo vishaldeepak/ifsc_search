@@ -1,26 +1,28 @@
-<h4>Get IFSC code of any Branch in India</h4>
-<p>Select a Bank and State. Optionally, to refine your search you can include city, street address of the Branch. Its recommended you give atleast the city/town name.</p>
-<div>
-  <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
-  <form id="branch-search" data-parsley-validate>
-    <div class="form-group error-con">
-      <%= select(:bank, :select, Enum.map(@banks, &{&1.name, &1.id}), prompt: "Choose Bank*", class: "form-control", required: "") %>
-    </div>
-    <div class="form-group  error-con">
-      <%= select(:state, :select, Enum.map(@states, &{&1.name, &1.id}), prompt: "Choose State/Union Territory* ", class: "form-control", required: "") %>
-    </div>
-    <div class="form-group">
-      <input class="form-control branch-text" placeholder="City/Address"></input>
-    </div>
-    <div class="text-center">
-    <button class="btn btn-success hvr-underline-from-center cursor-pointer" id="submit-ifsc" value="validate">Search</button>
-    </div>
-  </form>
-</div>
-<div id="branch-search-results">
+<div id="branch-search-component">
+  <h1>Get IFSC code of any Branch in India</h1>
+  <p>Select a Bank and State. Optionally, to refine your search you can include city, street address of the Branch. Its recommended you give atleast the city/town name.</p>
+  <div>
+    <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
+    <form id="branch-search" data-parsley-validate>
+      <div class="form-group error-con">
+        <%= select(:bank, :select, Enum.map(@banks, &{&1.name, &1.id}), prompt: "Choose Bank*", class: "form-control", required: "") %>
+      </div>
+      <div class="form-group  error-con">
+        <%= select(:state, :select, Enum.map(@states, &{&1.name, &1.id}), prompt: "Choose State/Union Territory* ", class: "form-control", required: "") %>
+      </div>
+      <div class="form-group">
+        <input class="form-control branch-text" placeholder="City/Address"></input>
+      </div>
+      <div class="text-center">
+      <button class="btn btn-success hvr-underline-from-center cursor-pointer" id="submit-ifsc" value="validate">Search</button>
+      </div>
+    </form>
+  </div>
+  <div id="branch-search-results">
 
-</div>
+  </div>
 
-<div class="scroll-to-top text-right d-none">
-  <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>
+  <div class="scroll-to-top text-right d-none" aria-label="Goto Top of The Page">
+    <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>
+  </div>
 </div>
