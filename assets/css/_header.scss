@@ -20,6 +20,14 @@
     font-family: 'Exo', Helvetica, Arial, sans-serif;
     font-weight: 700;
   }
+
+  .navbar-text a{
+    color: black !important;
+  }
+
+  .navbar-text a:hover{
+    color: rgba(255, 0, 0, 0.68) !important;
+  }
 }
 
   .navbar-light .navbar-brand{

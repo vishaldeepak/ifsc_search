@@ -16,7 +16,7 @@
       </li>
     </ul>
   <span class="navbar-text">
-    What is IFSC?
+    <%= link "What is IFSC?", to: static_page_path(@conn, :ifsc_about)%>
   </span>
   </div>
 </nav>

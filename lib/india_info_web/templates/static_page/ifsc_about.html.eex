@@ -1,0 +1,12 @@
+<div id="what-is-ifsc">
+  <h1>What is IFSC?</h1>
+  <p>
+    The Indian Financial System Code(IFS code or IFSC) is a system introudced by the RBI to enable funds tranfer electronically across all banks in India. Each bank branch has a unique IFSC code that helps them particiapate in one of the two payment methods
+    <ul class="list">
+      <li>Real Time Gross Settlement (RTGS)</li>
+      <li>National Electronic Fund Transfer (NEFT)</li>
+    </ul>
+
+    The IFSC code is an 11-character code with the first four alphabetic characters representing the bank name, the fifth character is 0(zero) and the last six characters representing the branch.
+  </p>
+</div>
