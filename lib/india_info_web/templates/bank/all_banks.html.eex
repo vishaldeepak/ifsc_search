@@ -1,0 +1,18 @@
+<h1>Browse All Banks</h1>
+<div class="std-mrgn-t">
+  Total No of Banks - <strong><%= Enum.count @banks %></strong>
+</div>
+<div class="std-mrgn-t">
+  <p> Select A Bank </p>
+  <div class="form-group">
+    <%= select(:bank, :select, Enum.map(@banks, &{&1.name, &1.id}), prompt: "Choose Bank", class: "form-control bank-selector", required: "") %>
+  </div>
+</div>
+<div>
+  <h4>Bank Listing</h4>
+  <ul>
+    <%= for bank <- @banks do %>
+      <li><%= link bank.name, to: bank_path(@conn, :show, bank) %></a></li>
+    <% end %>
+  </ul>
+</div>

@@ -2,6 +2,8 @@ let Common = {
   init(){
       $.fn.select2.defaults.set( "theme", "bootstrap" );
 
+      $(".select2-control").select2();
+
       $(document).tooltip({
         selector: '.clipboard.copy-icon',
         title: "Copied",

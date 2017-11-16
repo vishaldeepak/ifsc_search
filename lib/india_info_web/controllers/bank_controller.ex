@@ -1,12 +1,17 @@
 defmodule IndiaInfoWeb.BankController do
   use IndiaInfoWeb, :controller
 
-  alias IndiaInfo.Banks
+  alias IndiaInfo.{Banks, Locations}
   alias IndiaInfo.Banks.Bank
 
   def index(conn, _params) do
     banks = Banks.list_banks()
     render(conn, "index.html", banks: banks)
+  end
+
+  def all_banks(conn, _params) do
+    banks = Banks.list_banks()
+    render(conn, "all_banks.html", banks: banks)
   end
 
   def new(conn, _params) do
@@ -27,7 +32,8 @@ defmodule IndiaInfoWeb.BankController do
 
   def show(conn, %{"id" => id}) do
     bank = Banks.get_bank!(id)
-    render(conn, "show.html", bank: bank)
+    states = Locations.list_states([:name, :id])
+    render(conn, "show.html", bank: bank, states: states)
   end
 
   def edit(conn, %{"id" => id}) do

@@ -161,6 +161,12 @@ defmodule IndiaInfo.Locations do
   """
   def get_district!(id), do: Repo.get!(District, id)
 
+  def get_districts_from_state(state_id) do
+    District
+    |> where([d], d.state_id == ^state_id)
+    |> Repo.all
+  end
+
   @doc """
   Returns District given the name and state_id. Creates if not found
   """

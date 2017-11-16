@@ -12,6 +12,9 @@
         <%= link "Search Via IFSC", to: branch_path(@conn, :search_via_code), class: "nav-link"%>
       </li>
       <li class="nav-item">
+        <%= link "Browse All Banks", to: bank_path(@conn, :all_banks), class: "nav-link"%>
+      </li>
+      <li class="nav-item">
         <%= link "About", to: static_page_path(@conn, :about), class: "nav-link"%>
       </li>
     </ul>

@@ -23,8 +23,10 @@ import Common from "./common"
 import Branch from "./branch"
 import SearchViaCode from "./search_via_code"
 import ValidationConfig from "./validation_config"
+import Bank from "./bank"
 
 Common.init()
 Branch.init()
+Bank.init()
 SearchViaCode.init()
 ValidationConfig.init()

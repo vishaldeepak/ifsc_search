@@ -1,13 +1,17 @@
-<h2>Show Bank</h2>
+<div>
+  <h1><%= @bank.name %></h1>
+  <p>Filter Your Bank Results According to State and District</p>
+  <input data-id="<%= @bank.id%>" type="hidden"></input>
+  <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
+  <form data-parsley-validate>
+    <div class="form-group">
+      <%= select(:state, :select, Enum.map(@states, &{&1.name, &1.id}), prompt: "Choose State*", class: "form-control state-bank-selector select2-control", required: "") %>
+    </div>
+    <div class="form-group">
+      <%= select(:district, :select, [], prompt: "Choose District*", class: "form-control district-bank-selector select2-control", required: "") %>
 
-<ul>
-
-  <li>
-    <strong>Name:</strong>
-    <%= @bank.name %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: bank_path(@conn, :edit, @bank) %></span>
-<span><%= link "Back", to: bank_path(@conn, :index) %></span>
+    </div>
+    <span><%= link "Edit", to: bank_path(@conn, :edit, @bank) %></span>
+    <span><%= link "Back", to: bank_path(@conn, :index) %></span>
+  </form>
+</div>
