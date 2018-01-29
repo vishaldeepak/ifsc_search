@@ -27,52 +27,41 @@ mix deps.get
 
 ```
 
-Create the database. Make sure you setup your database name, username/password in `dev.exs`:
+Create the database. Make sure you setup your development database name, username/password in `dev.exs`:
 ```
-mix ecto.create
+mix ecto.create && mix ecto.migrate
 ```
 
-You can now compile and run the server:
+Install Node.js dependencies with
+```
+cd assets && npm install
+```
+
+You can now compile and run the server(from the project root directory):
 ```
 mix phx.server
 ```
-
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 ## Setting Up
 
-### Scrape RBI Website
+#### Scrape RBI Website
   In the root project directory hit the command. This should download all files in `build_data/IFSC_data`
   ```
    mix ifsc_scrapper
   ```
-### Convert .xls files to xlsx
+#### Convert .xls files to xlsx
   Some files downloaded will be in `xls` format. This project needs all files to be in `xlsx`.To do that I used libreOffice command line tool.
   ```
   cd build_data/IFSC_data
   soffice --headless --convert-to xlsx *.xls
   ```
 
-### Run task to build database
+#### Run tasks to build database
   Now process these files to build data to database. Make sure to go back to the root project directory.`cd ../..`
   ```
+  # Add States
+  mix parse_states
+
+  # Add Banks and Branches
   mix parse_ifsc
   ```
-
-
-To start your Phoenix server:
-
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
