@@ -29,6 +29,7 @@ defmodule Mix.Tasks.IfscScrapper do
 
       download_link = URI.parse(link)
         |> Map.put(:scheme, "https")
+        |> Map.put(:port, nil)
         |> URI.to_string
 
       filename = download_link
@@ -36,6 +37,7 @@ defmodule Mix.Tasks.IfscScrapper do
         |> List.last()
 
       downloaded_file = HTTPoison.get!(download_link).body
+
       File.write(filename, downloaded_file)
       IO.puts "Downloaded file " <> filename
       end)
