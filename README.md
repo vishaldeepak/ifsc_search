@@ -1,4 +1,21 @@
-# IndiaInfo
+# IFSC Search
+
+IFSC search is web interface for scrapping, filling up database and then searching on it using an HTML interface.
+
+## Installation
+
+You need to have the underlying technology installed that run the project
+
+  * [Phoenix Framwork] - https://hexdocs.pm/phoenix/installation.html#content
+  * [Postgres] - https://www.postgresql.org/
+
+## Clone this Repository
+
+You'll want to clone this repository with git [clone] (https://github.com/vishaldeepak/ifsc_search.git). If you plan on contributing, you'll want to fork it.
+
+## Setting Up
+
+
 
 To start your Phoenix server:
 
