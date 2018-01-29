@@ -1,7 +1,7 @@
-defmodule IndiaInfoWeb.StateControllerTest do
-  use IndiaInfoWeb.ConnCase
+defmodule IfscSearchWeb.StateControllerTest do
+  use IfscSearchWeb.ConnCase
 
-  alias IndiaInfo.Locations
+  alias IfscSearch.Locations
 
   @create_attrs %{name: "some name"}
   @update_attrs %{name: "some updated name"}

@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.RemoveCityIdFromBank do
+defmodule IfscSearch.Repo.Migrations.RemoveCityIdFromBank do
   use Ecto.Migration
 
   def change do

@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.AddUnqueNameState do
+defmodule IfscSearch.Repo.Migrations.AddUnqueNameState do
   use Ecto.Migration
 
   def change do

@@ -1,4 +1,4 @@
-defmodule IndiaInfoWeb.ChannelCase do
+defmodule IfscSearchWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule IndiaInfoWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint IndiaInfoWeb.Endpoint
+      @endpoint IfscSearchWeb.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(IndiaInfo.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(IfscSearch.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(IndiaInfo.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(IfscSearch.Repo, {:shared, self()})
     end
     :ok
   end

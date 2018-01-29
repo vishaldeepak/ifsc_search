@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.AddUuidToColumns do
+defmodule IfscSearch.Repo.Migrations.AddUuidToColumns do
   use Ecto.Migration
 
   def change do

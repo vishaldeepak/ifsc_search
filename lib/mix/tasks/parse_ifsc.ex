@@ -8,10 +8,10 @@ defmodule Mix.Tasks.ParseIfsc do
     use Mix.Task
     require Logger
 
-    alias IndiaInfo.Locations
-    alias IndiaInfo.Banks
-    alias IndiaInfo.Banks.Branch
-    alias IndiaInfo.Repo
+    alias IfscSearch.Locations
+    alias IfscSearch.Banks
+    alias IfscSearch.Banks.Branch
+    alias IfscSearch.Repo
 
     @shortdoc "Parse IFSC codes"
 

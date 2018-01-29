@@ -1,10 +1,10 @@
-defmodule IndiaInfo.BanksTest do
-  use IndiaInfo.DataCase
+defmodule IfscSearch.BanksTest do
+  use IfscSearch.DataCase
 
-  alias IndiaInfo.Banks
+  alias IfscSearch.Banks
 
   describe "banks" do
-    alias IndiaInfo.Banks.Bank
+    alias IfscSearch.Banks.Bank
 
     @valid_attrs %{name: "some name"}
     @update_attrs %{name: "some updated name"}
@@ -64,7 +64,7 @@ defmodule IndiaInfo.BanksTest do
   end
 
   describe "branches" do
-    alias IndiaInfo.Banks.Branch
+    alias IfscSearch.Banks.Branch
 
     @valid_attrs %{address: "some address", contact: "some contact", ifsc: "some ifsc", name: "some name"}
     @update_attrs %{address: "some updated address", contact: "some updated contact", ifsc: "some updated ifsc", name: "some updated name"}

@@ -1,3 +1,3 @@
-defmodule IndiaInfoWeb.LayoutViewTest do
-  use IndiaInfoWeb.ConnCase, async: true
+defmodule IfscSearchWeb.LayoutViewTest do
+  use IfscSearchWeb.ConnCase, async: true
 end

@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.CreateBanks do
+defmodule IfscSearch.Repo.Migrations.CreateBanks do
   use Ecto.Migration
 
   def change do

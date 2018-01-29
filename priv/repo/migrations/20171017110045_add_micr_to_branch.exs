@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.AddMicrToBranch do
+defmodule IfscSearch.Repo.Migrations.AddMicrToBranch do
   use Ecto.Migration
 
   def change do

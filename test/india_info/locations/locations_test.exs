@@ -1,10 +1,10 @@
-defmodule IndiaInfo.LocationsTest do
-  use IndiaInfo.DataCase
+defmodule IfscSearch.LocationsTest do
+  use IfscSearch.DataCase
 
-  alias IndiaInfo.Locations
+  alias IfscSearch.Locations
 
   describe "states" do
-    alias IndiaInfo.Locations.State
+    alias IfscSearch.Locations.State
 
     @valid_attrs %{name: "some name"}
     @update_attrs %{name: "some updated name"}
@@ -64,7 +64,7 @@ defmodule IndiaInfo.LocationsTest do
   end
 
   describe "districts" do
-    alias IndiaInfo.Locations.District
+    alias IfscSearch.Locations.District
 
     @valid_attrs %{name: "some name"}
     @update_attrs %{name: "some updated name"}
@@ -124,7 +124,7 @@ defmodule IndiaInfo.LocationsTest do
   end
 
   describe "cities" do
-    alias IndiaInfo.Locations.City
+    alias IfscSearch.Locations.City
 
     @valid_attrs %{name: "some name"}
     @update_attrs %{name: "some updated name"}

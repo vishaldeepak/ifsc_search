@@ -1,4 +1,4 @@
-defmodule IndiaInfo.DataCase do
+defmodule IfscSearch.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule IndiaInfo.DataCase do
 
   using do
     quote do
-      alias IndiaInfo.Repo
+      alias IfscSearch.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import IndiaInfo.DataCase
+      import IfscSearch.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(IndiaInfo.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(IfscSearch.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(IndiaInfo.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(IfscSearch.Repo, {:shared, self()})
     end
 
     :ok

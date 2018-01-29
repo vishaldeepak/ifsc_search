@@ -1,8 +1,8 @@
 import Ecto.Query, warn: false
-alias IndiaInfo.Repo
+alias IfscSearch.Repo
 require IEx
-alias IndiaInfo.Banks.{Bank, Branch}
-alias IndiaInfo.Locations.{City, District, State}
+alias IfscSearch.Banks.{Bank, Branch}
+alias IfscSearch.Locations.{City, District, State}
 alias Ecto.Multi
-alias IndiaInfo.{Banks, Locations}
-alias IndiaInfo.Helpers.QueryHelper
+alias IfscSearch.{Banks, Locations}
+alias IfscSearch.Helpers.QueryHelper

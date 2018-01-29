@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.CreateStates do
+defmodule IfscSearch.Repo.Migrations.CreateStates do
   use Ecto.Migration
 
   def change do

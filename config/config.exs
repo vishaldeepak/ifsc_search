@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :india_info,
-  ecto_repos: [IndiaInfo.Repo]
+config :ifsc_search,
+  ecto_repos: [IfscSearch.Repo]
 
 # Configures the endpoint
-config :india_info, IndiaInfoWeb.Endpoint,
+config :ifsc_search, IfscSearchWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "boM5Zrg/aC/07fmSJXtGhE99UPTRlYAA6xJ68c09z/STCMu//IYFUgQh1AhBE+gY",
-  render_errors: [view: IndiaInfoWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: IndiaInfo.PubSub,
+  render_errors: [view: IfscSearchWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: IfscSearch.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

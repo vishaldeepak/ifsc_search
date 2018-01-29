@@ -1,5 +1,5 @@
-defmodule IndiaInfoWeb.PageControllerTest do
-  use IndiaInfoWeb.ConnCase
+defmodule IfscSearchWeb.PageControllerTest do
+  use IfscSearchWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

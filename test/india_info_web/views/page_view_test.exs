@@ -1,3 +1,3 @@
-defmodule IndiaInfoWeb.PageViewTest do
-  use IndiaInfoWeb.ConnCase, async: true
+defmodule IfscSearchWeb.PageViewTest do
+  use IfscSearchWeb.ConnCase, async: true
 end

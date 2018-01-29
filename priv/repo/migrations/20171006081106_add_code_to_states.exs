@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.AddCodeToStates do
+defmodule IfscSearch.Repo.Migrations.AddCodeToStates do
   use Ecto.Migration
 
   def change do

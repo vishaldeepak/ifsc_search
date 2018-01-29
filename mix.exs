@@ -1,9 +1,9 @@
-defmodule IndiaInfo.Mixfile do
+defmodule IfscSearch.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :india_info,
+      app: :ifsc_search,
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -19,7 +19,7 @@ defmodule IndiaInfo.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {IndiaInfo.Application, []},
+      mod: {IfscSearch.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

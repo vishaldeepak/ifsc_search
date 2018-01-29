@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.AddSearchColumnsToBranch do
+defmodule IfscSearch.Repo.Migrations.AddSearchColumnsToBranch do
   use Ecto.Migration
 
   def up do

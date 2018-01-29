@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :india_info, IndiaInfoWeb.Endpoint,
+config :ifsc_search, IfscSearchWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -31,13 +31,13 @@ config :india_info, IndiaInfoWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :india_info, IndiaInfoWeb.Endpoint,
+config :ifsc_search, IfscSearchWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
-      ~r{lib/india_info_web/views/.*(ex)$},
-      ~r{lib/india_info_web/templates/.*(eex)$}
+      ~r{lib/ifsc_search_web/views/.*(ex)$},
+      ~r{lib/ifsc_search_web/templates/.*(eex)$}
     ]
   ]
 
@@ -47,7 +47,7 @@ config :logger,
   format: "$time $metadata[$level] $message\n"
 
 # configuration for the {LoggerFileBackend, :error_log} backend
-config :logger, :error_log, 
+config :logger, :error_log,
   path: "log/error.log",
   level: :error
 
@@ -56,7 +56,7 @@ config :logger, :error_log,
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :india_info, IndiaInfo.Repo,
+config :ifsc_search, IfscSearch.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",

@@ -1,4 +1,4 @@
 ExUnit.start()
 
-Ecto.Adapters.SQL.Sandbox.mode(IndiaInfo.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(IfscSearch.Repo, :manual)
 

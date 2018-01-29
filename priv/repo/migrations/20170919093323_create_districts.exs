@@ -1,4 +1,4 @@
-defmodule IndiaInfo.Repo.Migrations.CreateDistricts do
+defmodule IfscSearch.Repo.Migrations.CreateDistricts do
   use Ecto.Migration
 
   def change do

@@ -8,9 +8,9 @@ defmodule Mix.Tasks.ParseStates do
     require Logger
     require IEx
 
-    alias IndiaInfo.Locations
-    alias IndiaInfo.Locations.State
-    alias IndiaInfo.Repo
+    alias IfscSearch.Locations
+    alias IfscSearch.Locations.State
+    alias IfscSearch.Repo
 
     @shortdoc "Parse States along with short form"
 

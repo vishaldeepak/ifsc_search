@@ -1,7 +1,7 @@
-defmodule IndiaInfoWeb.BankControllerTest do
-  use IndiaInfoWeb.ConnCase
+defmodule IfscSearchWeb.BankControllerTest do
+  use IfscSearchWeb.ConnCase
 
-  alias IndiaInfo.Banks
+  alias IfscSearch.Banks
 
   @create_attrs %{name: "some name"}
   @update_attrs %{name: "some updated name"}
