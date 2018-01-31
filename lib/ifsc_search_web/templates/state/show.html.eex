@@ -9,5 +9,4 @@
 
 </ul>
 
-<span><%= link "Edit", to: state_path(@conn, :edit, @state) %></span>
 <span><%= link "Back", to: state_path(@conn, :index) %></span>

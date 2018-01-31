@@ -31,10 +31,10 @@ defmodule IfscSearchWeb.Router do
     # post "/locations/districts/by_state", Locations.DistrictController, :by_state
 
     resources "/branches", BranchController, only: [:show]
-    resources "/banks", BankController
+    resources "/banks", BankController, except: [:new, :edit, :delete]
     get "/all_banks", BankController, :all_banks
 
-    resources "/states", StateController
+    resources "/states", StateController, except: [:new, :edit, :delete]
   end
 
   # Other scopes may use custom stacks.

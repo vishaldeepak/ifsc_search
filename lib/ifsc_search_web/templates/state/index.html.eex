@@ -15,8 +15,6 @@
 
       <td class="text-right">
         <span><%= link "Show", to: state_path(@conn, :show, state), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: state_path(@conn, :edit, state), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: state_path(@conn, :delete, state), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>

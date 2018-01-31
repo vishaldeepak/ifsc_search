@@ -15,8 +15,6 @@
 
       <td class="text-right">
         <span><%= link "Show", to: bank_path(@conn, :show, bank), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: bank_path(@conn, :edit, bank), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: bank_path(@conn, :delete, bank), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>

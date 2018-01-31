@@ -18,6 +18,7 @@ defmodule IfscSearch.Banks.Bank do
     bank
     |> cast(attrs, [:name])
     |> validate_required([:name])
+    |> update_change(:name, &(String.downcase(&1)))
     |> unique_constraint(:name)
     |> ChangesetHelper.set_uuid()
   end
