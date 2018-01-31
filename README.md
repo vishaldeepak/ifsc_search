@@ -43,6 +43,9 @@ mix phx.server
 ```
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 ## Setting Up
+For convinence you can simply download or [clone this repo](https://github.com/vishaldeepak/IFSC-data-files). Once done move `IFSC_data` folder of the downloaded repo into `build_data/` of the root project of this repo(IFSC-search).
+
+If you prefer you can setup this on your own but it takes a little more work.
 
 #### Scrape RBI Website
   In the root project directory hit the command. This should download all files in `build_data/IFSC_data`
@@ -56,8 +59,8 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
   soffice --headless --convert-to xlsx *.xls
   ```
 
-#### Run tasks to build database
-  Now process these files to build data to database. Make sure to go back to the root project directory.`cd ../..`
+## Run tasks to build database
+  Now process these files to build data to database. Make sure to go back to the root project directory.
   ```
   # Add States
   mix parse_states
