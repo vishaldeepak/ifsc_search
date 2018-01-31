@@ -60,6 +60,6 @@ config :ifsc_search, IfscSearch.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "india_info_dev",
+  database: "ifsc_search_dev",
   hostname: "localhost",
   pool_size: 10
