@@ -32,7 +32,7 @@ defmodule IfscSearchWeb.Router do
 
     resources "/branches", BranchController, only: [:show]
     resources "/banks", BankController, except: [:new, :edit, :delete]
-    get "/all_banks", BankController, :all_banks
+    # get "/all_banks", BankController, :all_banks
 
     resources "/states", StateController, except: [:new, :edit, :delete]
   end

@@ -53,7 +53,7 @@ If you prefer you can setup this on your own but it takes a little more work.
    mix ifsc_scrapper
   ```
 #### Convert .xls files to xlsx
-  Some files downloaded will be in `xls` format. This project needs all files to be in `xlsx`.To do that I used libreOffice command line tool.
+  Some files downloaded will be in `xls` format. This project needs all files to be in `xlsx`.To do that I used [libreOffice](https://www.libreoffice.org/) command line tool.
   ```
   cd build_data/IFSC_data
   soffice --headless --convert-to xlsx *.xls
@@ -68,3 +68,7 @@ If you prefer you can setup this on your own but it takes a little more work.
   # Add Banks and Branches
   mix parse_ifsc
   ```
+
+**NOTE**  - The `parse_ifsc` can take more than a couple of minutes to complete. Use can also check for any errors in `log/error.log`. The project is currently able to parse more than 95% of the rows succesfully. Almost all erros are due to inconsitent data.
+
+**Feel free to raise an Issue**
