@@ -58,6 +58,6 @@ a:hover{
 .text-cap::first-letter { text-transform: uppercase; }
 .text-cap { text-transform: lowercase; }
 
-#select2-bank_select-results li{
+#select2-bank_select-results li, #select2-bank_select-container{
   text-transform: capitalize;
 }

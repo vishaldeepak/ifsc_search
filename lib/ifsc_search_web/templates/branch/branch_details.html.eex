@@ -17,8 +17,12 @@
   <li class="row">
     <div class="col-sm-3"><strong>MICR Code:</strong></div>
     <div class="col-sm-8">
-      <%= @branch.micr %>
-      <i class="fa fa-files-o clipboard copy-icon" data-clipboard-text="<%= @branch.micr%>" aria-hidden="true"></i>
+      <%= if is_nil(@branch.micr) do %>
+        ---
+      <% else %>
+        <%= @branch.micr %>
+        <i class="fa fa-files-o clipboard copy-icon" data-clipboard-text="<%= @branch.micr%>" aria-hidden="true"></i>
+      <% end %>
     </div>
   </li>
   <li class="row">
