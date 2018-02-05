@@ -71,6 +71,6 @@ If you prefer you can setup this on your own but it takes a little more work.
   mix parse_ifsc
   ```
 
-**NOTE**  - The `parse_ifsc` can take more than a couple of minutes to complete. Use can also check for any errors in `log/error.log`. The project is currently able to parse more than 95% of the rows succesfully. Almost all erros are due to inconsitent data.
+**NOTE**  - The `parse_ifsc` can take more than a couple of minutes to complete. You can also check for any errors in `log/error.log`. The project is currently able to parse more than 95% of the rows succesfully. Almost all erros are due to inconsitent data.
 
 **Feel free to raise an Issue**
